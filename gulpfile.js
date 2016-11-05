@@ -6,7 +6,14 @@ const gulp = require("gulp")
 const htmlmin = require("gulp-htmlmin")
 const pump = require("pump")
 
-gulp.task("build", ["minify-html"])
+gulp.task("build", ["copy-favicon", "minify-html"])
+
+gulp.task('copy-favicon', cb => {
+    pump([
+        gulp.src('src/favicon.ico'),
+        gulp.dest('dist')
+    ], cb)
+})
 
 gulp.task("minify-html", cb => {
     pump([
