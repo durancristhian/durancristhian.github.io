@@ -1,3 +1,6 @@
+# Dist directory used to host compiled files
+dist
+
 # Logs
 logs
 *.log
